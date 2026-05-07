@@ -43,7 +43,7 @@ function Register() {
 
         Password: <input type="password" placeholder='Enter your Password' name='Password' onChange={handlechange} /><br />
 
-        Phone: <input type="number" placeholder='Enter Phone' name='Phone' onChange={handlechange} /><br />
+        Phone: <input type="text" placeholder='Enter Phone' name='Phone' onChange={handlechange} /><br />
 
         <button onClick={handlesubmit}>Submit</button>
 

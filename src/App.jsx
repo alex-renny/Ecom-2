@@ -9,6 +9,7 @@ import AdminHome from './pages/AdminHome'
 import UserHome from './pages/UserHome'
 import AdminNav from './pages/AdminNav'
 import UserNav from './pages/UserNav'
+import UsersTable from './pages/UsersTable'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
               <Route path='Login' element={<Login/>}/>
               <Route path='AdminHome' element={<AdminHome/>}/>
               <Route path='UserHome' element={<UserHome/>}/>
+              <Route path='UserTable' element={<UsersTable/>}/>
                        
           </Routes>
       

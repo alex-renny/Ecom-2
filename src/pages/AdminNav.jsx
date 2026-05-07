@@ -16,7 +16,7 @@ return (
         <nav>
             <a href="/AdminHome">Home</a>
             <a href="/">Products</a>
-            <a href="">Users</a>
+            <a href="/UserTable">Users</a>
             <a href="">Pro-List</a>
             <a href="">Orders</a>
             <button onClick={handlelogout}>Logout</button>

@@ -1,0 +1,30 @@
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
+function UserNav() {
+
+    const navigate=useNavigate()
+
+    const handlelogout=()=>{
+        localStorage.removeItem('Role')
+        localStorage.removeItem('Loggeduser')
+        navigate('/Login')
+        window.location.reload
+    }
+  return (
+    <div>
+
+        <nav>
+
+            <a href="/UserHome">Home</a>
+            <a href="">Cart</a>
+            <a href="">MyOrders</a>
+            <button onClick={handlelogout}>Logout</button>
+
+        </nav>
+
+    </div>
+  )
+}
+
+export default UserNav

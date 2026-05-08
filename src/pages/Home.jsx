@@ -5,97 +5,41 @@ function Home() {
   return (
     <div className="home-container">
 
-      <div className="hero-section">
+      <section className="hero-section">
 
-        {/* LEFT CONTENT */}
+        <div className="hero-left">
 
-        <div className="hero-text">
-
-          <div className="hero-tag">
-            <span></span>
-            New Gen Premium Sneakers
-          </div>
+          <span className="hero-tag">
+            Comfort Meets Style
+          </span>
 
           <h1>
-            Move With <br />
-            Pure Style
+            Step Into <br />
+            Modern Style
           </h1>
 
           <p>
-            Discover futuristic footwear crafted with premium
-            comfort, luxury aesthetics, and lightweight design
-            built for everyday confidence.
+            Discover premium footwear designed for comfort,
+            fashion, and everyday confidence.
           </p>
 
           <div className="hero-buttons">
-
-            <button className="buy-btn">
-              Shop Now
-            </button>
-
-            <button className="view-btn">
-              Explore More
-            </button>
-
-          </div>
-
-          {/* STATS */}
-
-          <div className="hero-stats">
-
-            <div className="stat">
-              <h2>10K+</h2>
-              <p>Happy Customers</p>
-            </div>
-
-            <div className="stat">
-              <h2>250+</h2>
-              <p>Premium Products</p>
-            </div>
-
-            <div className="stat">
-              <h2>4.9</h2>
-              <p>Top Rating</p>
-            </div>
-
+            <button className="shop-btn">Shop Now</button>
+            <button className="explore-btn">Explore</button>
           </div>
 
         </div>
 
-        {/* RIGHT IMAGE */}
+        <div className="hero-right">
 
-        <div className="hero-image">
-
-          <div className="shoe-card">
-
-            <img
-              src="https://i.pinimg.com/1200x/97/bb/5a/97bb5adcf58aa89c3ec98209c549d8b6.jpg"
-              alt="premium shoe"
-            />
-
-          </div>
-
-          {/* FLOATING CARDS */}
-
-          <div className="floating-card card-1">
-            <h3>Premium</h3>
-            <p>Luxury Quality</p>
-          </div>
-
-          <div className="floating-card card-2">
-            <h3>Ultra Light</h3>
-            <p>All Day Comfort</p>
-          </div>
-
-          {/* SIDE TEXT */}
-
-          <div className="vertical-text">
-            TREXO PREMIUM
-          </div>
+          <img
+            src="https://i.pinimg.com/1200x/a2/af/9e/a2af9e36fecdad2bb8f487a6bc255a35.jpg"
+            alt="shoe"
+          />
 
         </div>
 
-      </div>
+      </section>
 
     </div>
   )

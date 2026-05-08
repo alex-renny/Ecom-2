@@ -1,21 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './commonnav.css'
 
 function CommonNav() {
   return (
-    <div>
 
-        <nav>
+    <nav className="navbar">
 
-            <Link to='/'>Home</Link>
+      <div className="logo">
+        TREXO
+      </div>
 
-            <Link to='/Register'>Register</Link>
+      <div className="nav-links">
 
-            <Link to='/Login'>Login</Link>
+        <Link to='/'>Home</Link>
 
-        </nav>
+        <Link to='/Register'>Register</Link>
 
-    </div>
+        <Link to='/Login'>Login</Link>
+
+      </div>
+
+    </nav>
+
   )
 }
 

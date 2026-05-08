@@ -15,6 +15,7 @@ import ProductList from './pages/ProductList'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import MyOrder from './pages/MyOrder'
+import AdminOrder from './pages/AdminOrder'
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
               <Route path='/Cart' element={<Cart/>}/>
               <Route path='/Checkout' element={<Checkout/>}/>
               <Route path='/MyOrder' element={<MyOrder/>}/>
+              <Route path='/AdminOrder' element={<AdminOrder/>}/>
                        
           </Routes>
       

@@ -18,7 +18,7 @@ return (
             <a href="/AdminProduct">Products</a>
             <a href="/UserTable">Users</a>
             <a href="/ProductList">Pro-List</a>
-            <a href="">Orders</a>
+            <a href="/AdminOrder">Orders</a>
             <button onClick={handlelogout}>Logout</button>
         </nav>
 

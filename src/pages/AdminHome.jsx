@@ -1,4 +1,5 @@
 import React from 'react'
+import {FiUser,FiHeart,FiShoppingBag,FiSearch} from "react-icons/fi";
 
 function AdminHome() {
   return (

@@ -156,7 +156,7 @@ function Register() {
             <div className="input-wrapper">
               <input
                 type="tel"
-                placeholder="+1 (555) 000-0000"
+                placeholder="+91 0000000000"
                 name="Phone"
                 value={user.Phone}
                 onChange={handlechange}

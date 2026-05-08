@@ -167,7 +167,7 @@ function Register() {
             </div>
           </div>
 
-          <div className="terms-section">
+          {/* <div className="terms-section">
             <label className="checkbox-label">
               <input type="checkbox" defaultChecked />
               <span className="checkmark"></span>
@@ -175,7 +175,7 @@ function Register() {
                 I agree to the <a href="#">Terms</a> & <a href="#">Privacy Policy</a>
               </span>
             </label>
-          </div>
+          </div> */}
 
           <button type="submit" className="submit-btn">
             <span>Create Account</span>

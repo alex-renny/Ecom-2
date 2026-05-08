@@ -58,10 +58,10 @@
   font-weight: 600;
 }
 
-.header-left p {
+/* .header-left p {
   color: #8B7355;
   font-size: 0.95rem;
-}
+} */
 
 .header-right {
   display: flex;
@@ -103,7 +103,7 @@
   color: #C4A46C;
 }
 
-.refresh-btn {
+/* .refresh-btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -128,7 +128,7 @@
 
 .spinning {
   animation: spin 1s linear infinite;
-}
+} */
 
 /* Stats Grid */
 .stats-grid {

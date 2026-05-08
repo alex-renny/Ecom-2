@@ -13,6 +13,7 @@ import UsersTable from './pages/UsersTable'
 import AdminProduct from './pages/AdminProduct'
 import ProductList from './pages/ProductList'
 import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
               <Route path='/AdminProduct' element={<AdminProduct/>}/>
               <Route path='ProductList' element={<ProductList/>}/>
               <Route path='Cart' element={<Cart/>}/>
+              <Route path='Checkout' element={<Checkout/>}/>
                        
           </Routes>
       

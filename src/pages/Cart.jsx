@@ -51,7 +51,7 @@ function Cart() {
 
             <h3>Total : $ {total}</h3>
 
-            <Link to=''>
+            <Link to='/Checkout'>
                 <button>Checkout</button>
             </Link>
 

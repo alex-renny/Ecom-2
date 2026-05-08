@@ -82,7 +82,7 @@ body{
   0 0 0 4px rgba(202, 159, 95, 0.1);
 }
 
-button{
+.login-btn{
   width:100%;
   padding:14px;
   border:none;
@@ -90,8 +90,8 @@ button{
   background:
   linear-gradient(
     135deg,
-    #efc550,
-    #f7c940
+    #734307,
+    #d08b29
   );
   color:#fff;
   font-size:16px;
@@ -101,7 +101,7 @@ button{
   margin-top:10px;
 }
 
-button:hover{
+.login-btn:hover{
   transform:translateY(-2px);
   box-shadow:
   0 10px 20px rgba(255, 255, 255, 0.25);

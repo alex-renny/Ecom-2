@@ -37,7 +37,7 @@ function Login() {
             localStorage.setItem('Loggeduser',JSON.stringify(user))
             localStorage.setItem('Role','User')
             alert('Login Successful')
-            navigate('/UserHome')
+            navigate('/UserProduct')
             window.location.reload()
             return
         }

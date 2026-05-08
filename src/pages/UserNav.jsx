@@ -9,14 +9,14 @@ function UserNav() {
         localStorage.removeItem('Role')
         localStorage.removeItem('Loggeduser')
         navigate('/Login')
-        window.location.reload
+        window.location.reload()
     }
   return (
     <div>
 
         <nav>
 
-            <a href="/UserHome">Home</a>
+            <a href="/UserProduct">Home</a>
             <a href="">Cart</a>
             <a href="">MyOrders</a>
             <button onClick={handlelogout}>Logout</button>

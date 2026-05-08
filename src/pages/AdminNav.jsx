@@ -15,7 +15,7 @@ return (
 
         <nav>
             <a href="/AdminHome">Home</a>
-            <a href="/">Products</a>
+            <a href="/AdminProduct">Products</a>
             <a href="/UserTable">Users</a>
             <a href="">Pro-List</a>
             <a href="">Orders</a>

@@ -178,7 +178,7 @@ function Cart() {
                                 <div className="summary-divider"></div>
                                 <div className="summary-row total-row">
                                     <span>Total Amount</span>
-                                    <span>₹{(total + (total * 0.18)).toLocaleString()}</span>
+                                    <span>₹{total}</span>
                                 </div>
                             </div>
                             

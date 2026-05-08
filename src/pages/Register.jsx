@@ -1,51 +1,117 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import './register.css'
 
 function Register() {
 
-    const navigate=useNavigate()
+  const navigate = useNavigate()
 
-    const[user,setUser]=useState({Username:'',Email:'',Password:'',Phone:''})
+  const [user, setUser] = useState({
+    Username: '',
+    Email: '',
+    Password: '',
+    Phone: ''
+  })
 
-    const handlechange=(e)=>{
-        setUser({
-            ...user,[e.target.name]:e.target.value
-        })
+  const handlechange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handlesubmit = () => {
+
+    if (
+      !user.Username ||
+      !user.Email ||
+      !user.Password ||
+      !user.Phone
+    ) {
+      alert('All fields are required')
+      return
     }
 
-    const handlesubmit=()=>{
-        if(!user.Username && !user.Email && !user.Password && !user.Phone){
-            alert('All fields are required')
-            return
-        }
-        let userDetails=JSON.parse(localStorage.getItem('User')) || []
+    let userDetails =
+      JSON.parse(localStorage.getItem('User')) || []
 
-        const exist=userDetails.find(i=>i.Email===user.Email)
-        if (exist){
-            alert("User Already Exist with the same Email")
-            return
-        }else{
-            userDetails.push(user)
-            localStorage.setItem('User',JSON.stringify(userDetails))
-            alert('Registration Successfull')
-            navigate('/Login')
+    const exist = userDetails.find(
+      (i) => i.Email === user.Email
+    )
 
-        }
+    if (exist) {
+      alert('User Already Exists with the same Email')
+      return
     }
+
+    userDetails.push(user)
+
+    localStorage.setItem(
+      'User',
+      JSON.stringify(userDetails)
+    )
+
+    alert('Registration Successful')
+
+    navigate('/Login')
+  }
+
   return (
-    <div>
-        <h2>Registration</h2>
+    <div className="register-container">
 
-        UserName: <input type="text" placeholder='Enter the Username' name='Username' onChange={handlechange} /><br />
+      <div className="register-card">
 
-        Email: <input type="email" placeholder='Enter Email' name='Email' onChange={handlechange} /><br />
+        <h2>Create Account</h2>
 
-        Password: <input type="password" placeholder='Enter your Password' name='Password' onChange={handlechange} /><br />
+        <p className="register-subtitle">
+          Join us and explore premium footwear collections
+        </p>
 
-        Phone: <input type="text" placeholder='Enter Phone' name='Phone' onChange={handlechange} /><br />
+        <div className="input-group">
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="Enter your username"
+            name="Username"
+            onChange={handlechange}
+          />
+        </div>
 
-        <button onClick={handlesubmit}>Submit</button>
+        <div className="input-group">
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            name="Email"
+            onChange={handlechange}
+          />
+        </div>
+
+        <div className="input-group">
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            name="Password"
+            onChange={handlechange}
+          />
+        </div>
+
+        <div className="input-group">
+          <label>Phone</label>
+          <input
+            type="text"
+            placeholder="Enter phone number"
+            name="Phone"
+            onChange={handlechange}
+          />
+        </div>
+
+        <button onClick={handlesubmit}>
+          Register
+        </button>
+
+      </div>
 
     </div>
   )

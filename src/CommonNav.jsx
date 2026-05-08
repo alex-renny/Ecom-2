@@ -5,13 +5,13 @@ import './commonnav.css'
 function CommonNav() {
   return (
 
-    <nav className="navbar">
+    <nav className="C-navbar">
 
       <div className="logo">
         TREXO
       </div>
 
-      <div className="nav-links">
+      <div className="C-nav-links">
 
         <Link to='/'>Home</Link>
 

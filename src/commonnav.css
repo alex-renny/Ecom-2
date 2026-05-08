@@ -6,7 +6,7 @@
 
 /* NAVBAR */
 
-.navbar{
+.C-navbar{
   width:100%;
   padding:22px 8%;
   background:#633906;
@@ -30,12 +30,12 @@
 
 /* LINKS */
 
-.nav-links{
+.C-nav-links{
   display:flex;
   gap:35px;
 }
 
-.nav-links a{
+.C-nav-links a{
   text-decoration:none;
   color:#ffffff;
   font-size:16px;
@@ -44,13 +44,13 @@
   position:relative;
 }
 
-.nav-links a:hover{
+.C-nav-links a:hover{
   color:#000;
 }
 
 /* UNDERLINE EFFECT */
 
-.nav-links a::after{
+.C-nav-links a::after{
   content:'';
   position:absolute;
   width:0%;
@@ -61,7 +61,7 @@
   transition:0.3s;
 }
 
-.nav-links a:hover::after{
+.C-nav-links a:hover::after{
   width:100%;
 }
 
@@ -69,12 +69,12 @@
 
 @media(max-width:768px){
 
-  .navbar{
+  .C-navbar{
     flex-direction:column;
     gap:15px;
   }
 
-  .nav-links{
+  .C-nav-links{
     gap:20px;
   }
 

@@ -171,10 +171,10 @@ function Cart() {
                                     <span>Shipping</span>
                                     <span className="free-ship">FREE</span>
                                 </div>
-                                <div className="summary-row">
+                                {/* <div className="summary-row">
                                     <span>Tax (GST)</span>
                                     <span>₹{(total * 0.18).toLocaleString()}</span>
-                                </div>
+                                </div> */}
                                 <div className="summary-divider"></div>
                                 <div className="summary-row total-row">
                                     <span>Total Amount</span>

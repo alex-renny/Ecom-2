@@ -17,7 +17,7 @@ function UserNav() {
         <nav>
 
             <a href="/UserProduct">Home</a>
-            <a href="">Cart</a>
+            <a href="/Cart">Cart</a>
             <a href="">MyOrders</a>
             <button onClick={handlelogout}>Logout</button>
 

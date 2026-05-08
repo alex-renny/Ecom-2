@@ -11,6 +11,8 @@ import AdminNav from './pages/AdminNav'
 import UserNav from './pages/UserNav'
 import UsersTable from './pages/UsersTable'
 import AdminProduct from './pages/AdminProduct'
+import ProductList from './pages/ProductList'
+import Cart from './pages/Cart'
 
 function App() {
 
@@ -34,6 +36,8 @@ function App() {
               <Route path='/UserProduct' element={<UserProduct/>}/>
               <Route path='/UserTable' element={<UsersTable/>}/>
               <Route path='/AdminProduct' element={<AdminProduct/>}/>
+              <Route path='ProductList' element={<ProductList/>}/>
+              <Route path='Cart' element={<Cart/>}/>
                        
           </Routes>
       

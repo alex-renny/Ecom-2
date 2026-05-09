@@ -8,7 +8,7 @@ function CommonNav() {
     <nav className="navbar">
 
       <div className="logo">
-        TREXO
+    ZIVARA
       </div>
 
       <div className="nav-links">

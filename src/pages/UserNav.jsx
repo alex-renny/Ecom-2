@@ -44,8 +44,8 @@ function UserNav() {
             <div className="nav-container">
                 <div className="nav-brand">
                     <div className="brand-logo">
-                        <span className="logo-icon">⌚</span>
-                        <span className="brand-name">WatchLux</span>
+                        
+                        <span className="brand-name">ZIVARA</span>
                     </div>
                     <div className="welcome-message">
                         <span className="welcome-text">Welcome,</span>
@@ -58,7 +58,6 @@ function UserNav() {
                         href="/UserProduct" 
                         className={`nav-link ${isActive('/UserProduct') ? 'active' : ''}`}
                     >
-                        <span className="nav-icon">🏠</span>
                         <span>Home</span>
                     </a>
                     
@@ -77,12 +76,10 @@ function UserNav() {
                         href="/MyOrder" 
                         className={`nav-link ${isActive('/MyOrder') ? 'active' : ''}`}
                     >
-                        <span className="nav-icon">📦</span>
                         <span>My Orders</span>
                     </a>
                     
                     <button onClick={handlelogout} className="logout-btn">
-                        <span className="nav-icon">🚪</span>
                         <span>Logout</span>
                     </button>
                 </div>

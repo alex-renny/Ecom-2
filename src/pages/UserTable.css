@@ -508,13 +508,14 @@ body {
         border: 1px solid #ddd;
     }
 
-    .user-table thead {
-        background: #f5f5f5 !important;
-        color: #000 !important;
-        -webkit-print-color-adjust: exact;
-    }
+    .users-table thead {
+    background: #f5f5f5 !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
 
-    .user-table thead th {
-        color: #000 !important;
-    }
+    .users-table thead th {
+    color: #000 !important;
+}
 }

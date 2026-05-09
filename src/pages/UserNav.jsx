@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import './usernav.css'
+import './UserNav.css'
 
 function UserNav() {
     const navigate = useNavigate()
     const location = useLocation()
+    const [cartCount, setCartCount] = useState(0)
+
+    useEffect(() => {
+        const updateCartCount = () => {
+            const user = JSON.parse(localStorage.getItem('Loggeduser') || '{}')
+            const cart = JSON.parse(localStorage.getItem('Cart') || '[]')
+            const userCartItems = cart.filter(item => item.user === user.Email)
+            setCartCount(userCartItems.length)
+        }
+
+        updateCartCount()
+        
+        // Listen for storage changes
+        window.addEventListener('storage', updateCartCount)
+        
+        return () => {
+            window.removeEventListener('storage', updateCartCount)
+        }
+    }, [])
 
     const handlelogout = () => {
         localStorage.removeItem('Role')
@@ -13,11 +32,9 @@ function UserNav() {
         window.location.reload()
     }
 
-    // Get current user info for welcome message
     const loggedUser = JSON.parse(localStorage.getItem('Loggeduser') || '{}')
     const userName = loggedUser.Name || loggedUser.Email?.split('@')[0] || 'User'
 
-    // Check if link is active
     const isActive = (path) => {
         return location.pathname === path
     }
@@ -27,8 +44,8 @@ function UserNav() {
             <div className="nav-container">
                 <div className="nav-brand">
                     <div className="brand-logo">
-                        <span className="logo-icon">🥿</span>
-                        <span className="brand-name">ZIVARA</span>
+                        <span className="logo-icon">⌚</span>
+                        <span className="brand-name">WatchLux</span>
                     </div>
                     <div className="welcome-message">
                         <span className="welcome-text">Welcome,</span>
@@ -51,7 +68,9 @@ function UserNav() {
                     >
                         <span className="nav-icon">🛒</span>
                         <span>Cart</span>
-                        <span className="cart-badge">0</span>
+                        {cartCount > 0 && (
+                            <span className="cart-badge">{cartCount}</span>
+                        )}
                     </a>
                     
                     <a 

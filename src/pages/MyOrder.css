@@ -515,7 +515,7 @@ body {
     }
     
     .order-filters {
-        gap: 0.5rem;
+        gap: 20px;
     }
     
     .filter-btn {

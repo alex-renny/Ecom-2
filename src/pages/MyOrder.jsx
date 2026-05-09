@@ -98,7 +98,7 @@ function MyOrder() {
                             <p>Total Orders</p>
                         </div>
                     </div>
-                    <div className="stat-card">
+                    {/* <div className="stat-card">
                         <div className="stat-icon">✅</div>
                         <div className="stat-info">
                             <h3>{orderStats.delivered}</h3>
@@ -111,7 +111,7 @@ function MyOrder() {
                             <h3>{orderStats.shipped + orderStats.processing}</h3>
                             <p>In Transit</p>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="stat-card">
                         <div className="stat-icon">💰</div>
                         <div className="stat-info">
@@ -131,7 +131,7 @@ function MyOrder() {
                     >
                         All Orders
                     </button>
-                    <button 
+                    {/* <button 
                         className={`filter-btn ${filterStatus === 'processing' ? 'active' : ''}`}
                         onClick={() => setFilterStatus('processing')}
                     >
@@ -148,7 +148,7 @@ function MyOrder() {
                         onClick={() => setFilterStatus('delivered')}
                     >
                         Delivered
-                    </button>
+                    </button> */}
                 </div>
             )}
 

@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import './AdminProduct.css'
 
 function AdminProduct() {
 
@@ -32,20 +33,77 @@ function AdminProduct() {
     }
 
   return (
-    <div>
+  <div className='admin-product-page'>
 
-        <h2>Add Products</h2>
+    {/* Background Decorative Elements */}
+    <div className="bg-pattern"></div>
+    
+    <div className="decor-shape-1"></div>
+    <div className="decor-shape-2"></div>
+    <div className="decor-shape-3"></div>
+    
+    <div className="shoe-decor">👟</div>
+    
+    <div className="particles-container">
+      <div className="particle"></div>
+      <div className="particle"></div>
+      <div className="particle"></div>
+      <div className="particle"></div>
+      <div className="particle"></div>
+    </div>
 
-        <input type="text" placeholder='Enter product Name' name='name' onChange={handleproduct}/>
-        <br />
-        <input type="text" placeholder='Enter Price' name='price' onChange={handleproduct}/>
-        <br />
-        <input type="text" placeholder='Enter Image Link' name='image' onChange={handleproduct}/>
-        <br />
-        <button onClick={handleadd}>Add</button>
+    <div className='admin-product-card'>
+
+      <h2>Add Products</h2>
+
+      <p className='admin-subtitle'>
+        Add premium products to your collection
+      </p>
+
+      <div className='form-group'>
+        <label>Product Name</label>
+
+        <input
+          type="text"
+          placeholder='Enter product name'
+          name='name'
+          onChange={handleproduct}
+        />
+      </div>
+
+      <div className='form-group'>
+        <label>Product Price</label>
+
+        <input
+          type="text"
+          placeholder='Enter product price'
+          name='price'
+          onChange={handleproduct}
+        />
+      </div>
+
+      <div className='form-group'>
+        <label>Product Image</label>
+
+        <input
+          type="text"
+          placeholder='Paste image link'
+          name='image'
+          onChange={handleproduct}
+        />
+      </div>
+
+      <button
+        className='add-btn'
+        onClick={handleadd}
+      >
+        Add Product
+      </button>
 
     </div>
-  )
+
+  </div>
+)
 }
 
 export default AdminProduct

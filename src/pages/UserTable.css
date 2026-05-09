@@ -1,0 +1,520 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f8f5f1;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.users-table-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 30px;
+    background: 
+        linear-gradient(
+            135deg,
+            #fdfbf8 0%,
+            #f4ede5 50%,
+            #ede0d4 100%
+        );
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Background */
+.users-table-container::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(140, 105, 63, 0.06) 0%, transparent 70%);
+    top: -150px;
+    right: -150px;
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.users-table-container::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(107, 66, 38, 0.04) 0%, transparent 70%);
+    bottom: -100px;
+    left: -100px;
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+/* =========================
+   HEADER SECTION
+========================= */
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.table-header h2 {
+    font-size: 2rem;
+    color: #5C3D0E;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.table-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #8B6914, #D4A853);
+    border-radius: 2px;
+}
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+
+.table-wrapper {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(140, 105, 63, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(140, 105, 63, 0.1);
+    overflow-x: auto;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.table-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(140, 105, 63, 0.15);
+}
+
+/* =========================
+   TABLE STYLES
+========================= */
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: transparent;
+    border: none;
+    font-size: 0.95rem;
+}
+
+/* Table Header */
+.user-table thead {
+    background: linear-gradient(135deg, #8B6914 0%, #6B4F0E 100%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.user-table thead tr {
+    border: none;
+}
+
+.user-table thead th {
+    padding: 16px 20px;
+    text-align: left;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    position: relative;
+    white-space: nowrap;
+}
+
+.user-table thead th:first-child {
+    border-radius: 12px 0 0 0;
+}
+
+.user-table thead th:last-child {
+    border-radius: 0 12px 0 0;
+}
+
+.user-table thead th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+}
+
+/* Table Body */
+.user-table tbody tr {
+    border: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background: rgba(248, 245, 241, 0.5);
+}
+
+.user-table tbody tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.user-table tbody tr:hover {
+    background: linear-gradient(90deg, 
+        rgba(212, 168, 83, 0.1) 0%, 
+        rgba(248, 245, 241, 0.8) 50%,
+        rgba(255, 255, 255, 0.9) 100%
+    );
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(139, 105, 20, 0.1);
+}
+
+.user-table tbody td {
+    padding: 16px 20px;
+    color: #5C3D0E;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid rgba(140, 105, 63, 0.1);
+    transition: all 0.3s ease;
+}
+
+.user-table tbody tr:hover td {
+    color: #3E2708;
+}
+
+/* First column emphasis */
+.user-table tbody td:first-child {
+    font-weight: 600;
+    color: #8B6914;
+    position: relative;
+}
+
+.user-table tbody td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 20px;
+    background: #D4A853;
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.user-table tbody tr:hover td:first-child::before {
+    opacity: 1;
+}
+
+/* Empty State */
+.user-table .empty-row td {
+    text-align: center;
+    padding: 60px 20px;
+    color: #8B7355;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    opacity: 0.3;
+}
+
+.empty-text {
+    color: #8B7355;
+    font-size: 1rem;
+}
+
+/* =========================
+   TABLE FOOTER
+========================= */
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.user-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #8B7355;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.user-count .count-number {
+    background: linear-gradient(135deg, #8B6914, #D4A853);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1024px) {
+    .users-table-container {
+        padding: 30px 20px;
+    }
+
+    .table-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .table-wrapper {
+        padding: 20px;
+    }
+
+    .user-table thead th,
+    .user-table tbody td {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .users-table-container {
+        padding: 25px 15px;
+    }
+
+    .table-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .table-wrapper {
+        padding: 15px;
+        border-radius: 16px;
+    }
+
+    .user-table thead {
+        display: none;
+    }
+
+    .user-table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(140, 105, 63, 0.1);
+        padding: 10px;
+    }
+
+    .user-table tbody tr:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(139, 105, 20, 0.15);
+    }
+
+    .user-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+        text-align: right;
+        border-bottom: 1px solid rgba(140, 105, 63, 0.05);
+    }
+
+    .user-table tbody td:last-child {
+        border-bottom: none;
+    }
+
+    .user-table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #8B6914;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        margin-right: 10px;
+    }
+
+    .user-table tbody td:first-child::before {
+        position: static;
+        opacity: 1;
+        width: auto;
+        height: auto;
+        background: none;
+        border-radius: 0;
+    }
+
+    .user-table .empty-row td {
+        display: block;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .user-table .empty-row td::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .users-table-container {
+        padding: 20px 10px;
+    }
+
+    .table-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .table-wrapper {
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .user-table tbody td {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    .user-table tbody td::before {
+        font-size: 0.75rem;
+    }
+
+    .user-table .empty-row td {
+        padding: 30px 15px;
+    }
+
+    .empty-icon {
+        font-size: 2.5rem;
+    }
+
+    .empty-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================
+   CUSTOM SCROLLBAR
+========================= */
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #F5F0E1;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #D4A853, #8B6914);
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #C49A3C, #6B4F0E);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-table tbody tr {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.user-table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.user-table tbody tr:nth-child(2) { animation-delay: 0.15s; }
+.user-table tbody tr:nth-child(3) { animation-delay: 0.2s; }
+.user-table tbody tr:nth-child(4) { animation-delay: 0.25s; }
+.user-table tbody tr:nth-child(5) { animation-delay: 0.3s; }
+.user-table tbody tr:nth-child(6) { animation-delay: 0.35s; }
+.user-table tbody tr:nth-child(7) { animation-delay: 0.4s; }
+.user-table tbody tr:nth-child(8) { animation-delay: 0.45s; }
+.user-table tbody tr:nth-child(9) { animation-delay: 0.5s; }
+.user-table tbody tr:nth-child(10) { animation-delay: 0.55s; }
+
+/* =========================
+   PRINT STYLES
+========================= */
+
+@media print {
+    .users-table-container {
+        background: white;
+        padding: 0;
+    }
+
+    .table-wrapper {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .user-table thead {
+        background: #f5f5f5 !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .user-table thead th {
+        color: #000 !important;
+    }
+}

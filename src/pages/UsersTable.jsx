@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import './UserTable.css'
 
 function UsersTable() {
 
@@ -10,47 +11,57 @@ function UsersTable() {
   },[])
 
   return (
-    <div>
+    <div className="users-table-container">
 
-        <h2>Users List</h2>
+        <div className="table-header">
+          <h2>Users List</h2>
+        </div>
 
-        <table border="2" cellPadding="10">
+        <div className="table-wrapper">
+          <table className="user-table" cellPadding="10">
 
-          <thead>
-            <tr>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
 
-              <th>Name</th>
-              <th>Email</th>
-              <th>Password</th>
-              <th>Phone</th>
-
-            </tr>
-          </thead>
-
-          <tbody>
-
+            <tbody>
               {
                 user.length===0 ? (
-                  <tr>
-                    <td colSpan="5">No users Found</td>
+                  <tr className="empty-row">
+                    <td colSpan="4">
+                      <div className="empty-state">
+                        <span className="empty-icon">👥</span>
+                        <span className="empty-text">No users found</span>
+                      </div>
+                    </td>
                   </tr>
                 ) : (
                   user.map((item,index)=>(
                     <tr key={index}>
-
-                        <td data-label='Name'>{item.Username}</td>
-                        <td data-label='Password'>{item.Password}</td>
-                        <td data-label='Email'>{item.Email}</td>
-                        <td data-label='Phone'>{item.Phone}</td>
-
+                      <td data-label='Name'>{item.Username}</td>
+                      <td data-label='Email'>{item.Email}</td>
+                      <td data-label='Password'>{item.Password}</td>
+                      <td data-label='Phone'>{item.Phone}</td>
                     </tr>
                   ))
                 )
               }
+            </tbody>
 
-          </tbody>
+          </table>
+        </div>
 
-        </table>
+        <div className="table-footer">
+          <div className="user-count">
+            <span>Total Users:</span>
+            <span className="count-number">{user.length}</span>
+          </div>
+        </div>
 
     </div>
   )

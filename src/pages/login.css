@@ -446,7 +446,7 @@ form {
 }
 
 /* Social Buttons */
-.social-buttons {
+/* .social-buttons {
   display: flex;
   gap: 12px;
   margin-bottom: 25px;
@@ -476,7 +476,7 @@ form {
   border-color: #A0522D;
   box-shadow: 0 5px 15px rgba(139, 105, 20, 0.1);
   transform: translateY(-2px);
-}
+} */
 
 /* Register Link */
 .register-link {

@@ -1,0 +1,42 @@
+[33mdabe268[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Logout button fixed dor adminnav in mobile view
+[33m08138cf[m checkout css added
+[33m6f28f57[m Admin Nav Liogout button fixed in mobile view
+[33ma982e2a[m AdminOrder.css added and In UserProduct default products name fixed
+[33me7cfaf6[m Css added to ProductList
+[33mb86cd9c[m Css corrected in UserTable
+[33m745d722[m Css for UserTable added
+[33m90976c2[m Css added to AdminProducts
+[33m0aa8115[m myorder css updated
+[33m4fbe564[m In cart Gst Removed from Total Cost
+[33m17c4ce7[m GST removed from cart
+[33m090726f[m changes updated
+[33m4b841e8[m Trying to fix nav
+[33m4bdac89[m USERNAV CHANGE
+[33m55f8a3d[m UPDATED
+[33m7ab9707[m Merge branch 'main' of https://github.com/alex-renny/Ecom-2
+[33m619a186[m BRAND NAME CHANGED
+[33mfb081e0[m userproduct css updated
+[33m6cf35e9[m AdminHome unwanted css removed
+[33m44cd636[m AdminHome Added
+[33m6af56c9[m Terms option removed in Register
+[33m756cee2[m Login-btn css modified
+[33me526cb1[m changed register page
+[33m083d801[m icon imported in adminhome and register phone corrected
+[33m68d1230[m change register css and login css
+[33mb66921a[m changed register css
+[33m106cdf7[m Login and Register btn css changed
+[33m210bae1[m AdminOrder Added
+[33m31dc2a3[m MyOrder Added
+[33m469a55c[m App,jsx '/ ' fixed
+[33m2ce200e[m Checkout Added
+[33mce753b3[m  update login css
+[33m28ecb74[m update register css
+[33mf31e7f5[m Merge branch 'main' of https://github.com/alex-renny/Ecom-2
+[33m427192d[m update home css
+[33mbdc1b23[m ProductList in Admin and Cart is added
+[33m9032349[m UserProduct automatically loading issue fixed
+[33m05ea050[m home css added
+[33m5b5d33d[m UserProduct.jsx and AdminProduct.jsx are added
+[33m6525016[m UserTable.jsx Added
+[33mf0c41ed[m in register type of number changed to text
+[33m4854316[m First Commit

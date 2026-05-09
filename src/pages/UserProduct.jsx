@@ -11,47 +11,47 @@ function UserProduct() {
         // DEFAULT PRODUCTS
         if (!data || data.length === 0) {
             const defaultproducts = [
-                {
-                    name: 'Smart Watch',
-                    price: 999,
-                    image: 'https://i.pinimg.com/1200x/bb/89/4e/bb894e1691e05a976a07f75d5bcdf5a5.jpg'
-                },
-                {
-                    name: 'Smart Watch',
-                    price: 2999,
-                    image: 'https://i.pinimg.com/736x/0d/d6/6c/0dd66cf8025912507d5d92fb314f3296.jpg'
-                },
-                {
-                    name: 'Smart Watch',
-                    price: 1299,
-                    image: 'https://i.pinimg.com/1200x/7e/4d/9c/7e4d9cb65a4e2ca8db7a396c8018804b.jpg'
-                },
-                {
-                    name: 'Smart Watch',
-                    price: 599,
-                    image: 'https://i.pinimg.com/1200x/ac/0b/8d/ac0b8df8bb360671b6b061c8de7354d1.jpg'
-                },
-                {
-                    name: 'Smart Watch',
-                    price: 1499,
-                    image: 'https://i.pinimg.com/736x/49/68/a8/4968a82f3d3bdbe58d2a2220fea1f247.jpg'
-                },
-                {
-                    name: 'Smart Watch',
-                    price: 2499,
-                    image: 'https://i.pinimg.com/736x/84/57/2e/84572e33229ebb999e3b4d3239e86f70.jpg'
-                },
-                {
-                    name: 'Smart Watch',
-                    price: 2199,
-                    image: 'https://i.pinimg.com/1200x/78/d7/6b/78d76b652f293e6be8d5caf6271a5720.jpg'
-                },
-                {
-                    name: 'Smart Watch',
-                    price: 1799,
-                    image: 'https://i.pinimg.com/736x/84/57/2e/84572e33229ebb999e3b4d3239e86f70.jpg'
-                },
-            ]
+                    {
+                        name: 'Urban Comfort Slides',
+                        price: 999,
+                        image: 'https://i.pinimg.com/1200x/bb/89/4e/bb894e1691e05a976a07f75d5bcdf5a5.jpg'
+                    },
+                    {
+                        name: 'Classic Brown Slippers',
+                        price: 2999,
+                        image: 'https://i.pinimg.com/736x/0d/d6/6c/0dd66cf8025912507d5d92fb314f3296.jpg'
+                    },
+                    {
+                        name: 'Premium Leather Slides',
+                        price: 1299,
+                        image: 'https://i.pinimg.com/1200x/7e/4d/9c/7e4d9cb65a4e2ca8db7a396c8018804b.jpg'
+                    },
+                    {
+                        name: 'Casual Home Slippers',
+                        price: 599,
+                        image: 'https://i.pinimg.com/1200x/ac/0b/8d/ac0b8df8bb360671b6b061c8de7354d1.jpg'
+                    },
+                    {
+                        name: 'Soft Walk Sandals',
+                        price: 1499,
+                        image: 'https://i.pinimg.com/736x/49/68/a8/4968a82f3d3bdbe58d2a2220fea1f247.jpg'
+                    },
+                    {
+                        name: 'Elite Fashion Slides',
+                        price: 2499,
+                        image: 'https://i.pinimg.com/736x/84/57/2e/84572e33229ebb999e3b4d3239e86f70.jpg'
+                    },
+                    {
+                        name: 'Luxury Comfort Slippers',
+                        price: 2199,
+                        image: 'https://i.pinimg.com/1200x/78/d7/6b/78d76b652f293e6be8d5caf6271a5720.jpg'
+                    },
+                    {
+                        name: 'Daily Wear Sandals',
+                        price: 1799,
+                        image: 'https://i.pinimg.com/736x/84/57/2e/84572e33229ebb999e3b4d3239e86f70.jpg'
+                    },
+                ]
 
             localStorage.setItem('Products', JSON.stringify(defaultproducts))
             setProduct(defaultproducts)

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import './UserNav.css'
+import './userNav.css'
 
 function UserNav() {
     const navigate = useNavigate()
@@ -114,7 +114,7 @@ function UserNav() {
                             closeMobileMenu()
                             handlelogout()
                         }} 
-                        className="logout-btn"
+                        className="U-logout-btn"
                     >
                         <span className="nav-icon">🚪</span>
                         <span>Logout</span>

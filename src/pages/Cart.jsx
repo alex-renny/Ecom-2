@@ -1,65 +1,200 @@
-import React,{useState,useEffect} from 'react'
-import { Navigate,Link} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import './cart.css'
 
 function Cart() {
+    const [cart, setCart] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    const[cart,setCart]=useState([])
+    useEffect(() => {
+        loadCart()
+    }, [])
 
-    useEffect(()=>{
-        let user=JSON.parse(localStorage.getItem('Loggeduser'))
-        let data=JSON.parse(localStorage.getItem('Cart'))
-
-        let usercart=data.filter(item=>item.user===user?.Email)
+    const loadCart = () => {
+        setLoading(true)
+        let user = JSON.parse(localStorage.getItem('Loggeduser'))
+        
+        if (!user) {
+            setCart([])
+            setLoading(false)
+            return
+        }
+        
+        let data = JSON.parse(localStorage.getItem('Cart')) || []
+        let usercart = data.filter(item => item.user === user?.Email)
         setCart(usercart)
-    },[])
-
-    const removeitem=(index)=>{
-            let updatedcart=[...cart]
-            updatedcart.splice(index,1)
-
-            setCart(updatedcart)
-            localStorage.setItem('Cart',JSON.stringify(updatedcart))
-            alert('Product Removed from Cart')
+        setLoading(false)
     }
 
-    const total=cart.reduce((sum,item)=>{
-        return sum+Number(item.price)
-    },0)
-
-  return (
-    <>
-    <div>
+    const removeitem = (index, itemName) => {
+        let updatedcart = [...cart]
+        updatedcart.splice(index, 1)
         
-        <h1>My Cart</h1>
-        <h3>Total Price : $ {total}</h3>
+        // Update localStorage with the new cart
+        let user = JSON.parse(localStorage.getItem('Loggeduser'))
+        let allCart = JSON.parse(localStorage.getItem('Cart')) || []
+        let filteredCart = allCart.filter(item => item.user !== user?.Email)
+        let newCart = [...filteredCart, ...updatedcart]
+        
+        setCart(updatedcart)
+        localStorage.setItem('Cart', JSON.stringify(newCart))
+        
+        // Show sweet alert style notification
+        showNotification(`${itemName} removed from cart`, 'success')
+    }
 
-        { 
-            cart.map((item,index)=>(
+    const showNotification = (message, type) => {
+        const notification = document.createElement('div')
+        notification.className = `notification ${type}`
+        notification.textContent = message
+        document.body.appendChild(notification)
+        
+        setTimeout(() => {
+            notification.classList.add('show')
+        }, 100)
+        
+        setTimeout(() => {
+            notification.classList.remove('show')
+            setTimeout(() => notification.remove(), 300)
+        }, 2000)
+    }
 
-                <div key={index}>
+    const updateQuantity = (index, change) => {
+        let updatedcart = [...cart]
+        const newQuantity = (updatedcart[index].quantity || 1) + change
+        
+        if (newQuantity < 1) return
+        
+        updatedcart[index].quantity = newQuantity
+        setCart(updatedcart)
+        
+        // Update localStorage
+        let user = JSON.parse(localStorage.getItem('Loggeduser'))
+        let allCart = JSON.parse(localStorage.getItem('Cart')) || []
+        let otherItems = allCart.filter(item => item.user !== user?.Email)
+        let updatedItems = updatedcart.map(item => ({ ...item, user: user?.Email }))
+        let newCart = [...otherItems, ...updatedItems]
+        localStorage.setItem('Cart', JSON.stringify(newCart))
+    }
 
-                    <img src={item.image} alt="Product Image" />
-                    <h2>{item.name}</h2>
-                    <p>{item.price}</p>
+    const total = cart.reduce((sum, item) => {
+        const price = Number(item.price)
+        const quantity = item.quantity || 1
+        return sum + (price * quantity)
+    }, 0)
 
-                    <button onClick={removeitem}>Remove</button>
+    const itemCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0)
 
+    if (loading) {
+        return (
+            <div className="cart-loading">
+                <div className="loading-spinner"></div>
+                <p>Loading your cart...</p>
+            </div>
+        )
+    }
+
+    return (
+        <div className="cart-container">
+            <div className="cart-header">
+                <h1>My Shopping Cart</h1>
+                <p className="cart-subtitle">{itemCount} {itemCount === 1 ? 'item' : 'items'} in your cart</p>
+            </div>
+
+            {cart.length === 0 ? (
+                <div className="empty-cart">
+                    <div className="empty-cart-icon">🛒</div>
+                    <h2>Your cart is empty</h2>
+                    <p>Looks like you haven't added any items yet</p>
+                    <Link to="/UserProduct" className="continue-shopping-btn">
+                        Continue Shopping
+                    </Link>
                 </div>
-            ))
-        }
-        <div>
+            ) : (
+                <>
+                    <div className="cart-content">
+                        <div className="cart-items">
+                            {cart.map((item, index) => (
+                                <div key={index} className="cart-item">
+                                    <div className="item-image">
+                                        <img src={item.image} alt={item.name} />
+                                    </div>
+                                    
+                                    <div className="item-details">
+                                        <h3>{item.name}</h3>
+                                        <div className="item-price">₹{Number(item.price).toLocaleString()}</div>
+                                        <div className="item-quantity">
+                                            <button 
+                                                className="qty-btn"
+                                                onClick={() => updateQuantity(index, -1)}
+                                            >
+                                                −
+                                            </button>
+                                            <span className="qty-value">{item.quantity || 1}</span>
+                                            <button 
+                                                className="qty-btn"
+                                                onClick={() => updateQuantity(index, 1)}
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="item-total">
+                                        <div className="item-total-label">Total</div>
+                                        <div className="item-total-price">
+                                            ₹{((item.quantity || 1) * Number(item.price)).toLocaleString()}
+                                        </div>
+                                    </div>
+                                    
+                                    <button 
+                                        className="remove-item-btn"
+                                        onClick={() => removeitem(index, item.name)}
+                                    >
+                                        ✕
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
 
-            <h3>Total : $ {total}</h3>
-
-            <Link to='/Checkout'>
-                <button>Checkout</button>
-            </Link>
-
+                        <div className="cart-summary">
+                            <div className="summary-header">
+                                <h3>Order Summary</h3>
+                            </div>
+                            
+                            <div className="summary-details">
+                                <div className="summary-row">
+                                    <span>Subtotal ({itemCount} items)</span>
+                                    <span>₹{total.toLocaleString()}</span>
+                                </div>
+                                <div className="summary-row">
+                                    <span>Shipping</span>
+                                    <span className="free-ship">FREE</span>
+                                </div>
+                                <div className="summary-row">
+                                    <span>Tax (GST)</span>
+                                    <span>₹{(total * 0.18).toLocaleString()}</span>
+                                </div>
+                                <div className="summary-divider"></div>
+                                <div className="summary-row total-row">
+                                    <span>Total Amount</span>
+                                    <span>₹{(total + (total * 0.18)).toLocaleString()}</span>
+                                </div>
+                            </div>
+                            
+                            <Link to="/Checkout" className="checkout-btn">
+                                Proceed to Checkout →
+                            </Link>
+                            
+                            <Link to="/UserProduct" className="continue-shop-link">
+                                ← Continue Shopping
+                            </Link>
+                        </div>
+                    </div>
+                </>
+            )}
         </div>
-
-    </div>
-    </>
-  )
+    )
 }
 
 export default Cart

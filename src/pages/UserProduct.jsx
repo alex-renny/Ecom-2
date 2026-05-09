@@ -13,42 +13,42 @@ function UserProduct() {
             const defaultproducts = [
                 {
                     name: 'Smart Watch',
-                    price: 3000,
+                    price: 999,
                     image: 'https://i.pinimg.com/1200x/bb/89/4e/bb894e1691e05a976a07f75d5bcdf5a5.jpg'
                 },
                 {
                     name: 'Smart Watch',
-                    price: 3000,
+                    price: 2999,
                     image: 'https://i.pinimg.com/736x/0d/d6/6c/0dd66cf8025912507d5d92fb314f3296.jpg'
                 },
                 {
                     name: 'Smart Watch',
-                    price: 3000,
+                    price: 1299,
                     image: 'https://i.pinimg.com/1200x/7e/4d/9c/7e4d9cb65a4e2ca8db7a396c8018804b.jpg'
                 },
                 {
                     name: 'Smart Watch',
-                    price: 3000,
+                    price: 599,
                     image: 'https://i.pinimg.com/1200x/ac/0b/8d/ac0b8df8bb360671b6b061c8de7354d1.jpg'
                 },
                 {
                     name: 'Smart Watch',
-                    price: 3000,
+                    price: 1499,
                     image: 'https://i.pinimg.com/736x/49/68/a8/4968a82f3d3bdbe58d2a2220fea1f247.jpg'
                 },
                 {
                     name: 'Smart Watch',
-                    price: 3000,
+                    price: 2499,
                     image: 'https://i.pinimg.com/736x/84/57/2e/84572e33229ebb999e3b4d3239e86f70.jpg'
                 },
                 {
                     name: 'Smart Watch',
-                    price: 3000,
+                    price: 2199,
                     image: 'https://i.pinimg.com/1200x/78/d7/6b/78d76b652f293e6be8d5caf6271a5720.jpg'
                 },
                 {
                     name: 'Smart Watch',
-                    price: 3000,
+                    price: 1799,
                     image: 'https://i.pinimg.com/736x/84/57/2e/84572e33229ebb999e3b4d3239e86f70.jpg'
                 },
             ]
@@ -102,7 +102,7 @@ function UserProduct() {
         <div className="products-container">
             <div className="products-header">
                 <h1>Our Collection</h1>
-                <p>Discover premium smartwatches crafted for your lifestyle</p>
+                <p>Discover premium footwears crafted for your lifestyle</p>
             </div>
 
             {product.length === 0 ? (

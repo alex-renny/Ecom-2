@@ -84,7 +84,7 @@ function UserNav() {
                         className={`nav-link ${isActive('/UserProduct') ? 'active' : ''}`}
                         onClick={closeMobileMenu}
                     >
-                        <span className="nav-icon">🏠</span>
+                        <span className="nav-icon"></span>
                         <span>Home</span>
                     </a>
                     
@@ -105,7 +105,7 @@ function UserNav() {
                         className={`nav-link ${isActive('/MyOrder') ? 'active' : ''}`}
                         onClick={closeMobileMenu}
                     >
-                        <span className="nav-icon">📦</span>
+                        <span className="nav-icon"></span>
                         <span>My Orders</span>
                     </a>
                     
@@ -116,7 +116,7 @@ function UserNav() {
                         }} 
                         className="U-logout-btn"
                     >
-                        <span className="nav-icon">🚪</span>
+                        <span className="nav-icon"></span>
                         <span>Logout</span>
                     </button>
                 </div>

@@ -40,12 +40,12 @@ function AdminNav() {
             <nav className="admin-nav">
                 {/* Brand/Logo */}
                 <a href="/AdminHome" className="nav-brand" onClick={closeMobileMenu}>
-                    <div className="nav-brand-icon">
+                    {/* <div className="nav-brand-icon"> */}
                         {/* <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> */}
                             {/* <path d="M2 3H7C8.06087 3 9.07828 3.42143 9.82843 4.17157C10.5786 4.92172 11 5.93913 11 7V21C11 20.2044 10.6839 19.4413 10.1213 18.8787C9.55871 18.3161 8.79565 18 8 18H2V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             <path d="M22 3H17C15.9391 3 14.9217 3.42143 14.1716 4.17157C13.4214 4.92172 13 5.93913 13 7V21C13 20.2044 13.3161 19.4413 13.8787 18.8787C14.4413 18.3161 15.2044 18 16 18H22V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg> */}
-                    </div>
+                    {/* </div> */}
                     <div className="nav-brand-text">
                         ZIVARA
                     </div>

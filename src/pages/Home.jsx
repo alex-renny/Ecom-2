@@ -1,7 +1,14 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 import './home.css'
 
 function Home() {
+
+  const navigate = useNavigate()
+  const handlelogin=()=>{
+    navigate('/Login')
+  }
+
   return (
     <div className="home-container">
 
@@ -24,8 +31,8 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <button className="shop-btn">Shop Now</button>
-            <button className="explore-btn">Explore</button>
+            <button onClick={handlelogin} className="shop-btn">Shop Now</button>
+            <button onClick={handlelogin} className="explore-btn">Explore</button>
           </div>
 
         </div>
